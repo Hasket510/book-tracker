@@ -1,0 +1,40 @@
+@use '@styles/variables' as *;
+
+.header {
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	.title {
+		text-align: center;
+	}
+
+	.navList {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.navItem {
+			width: 100%;
+			border-top: 1px solid $white;
+			border-bottom: 1px solid $white;
+			&:not(:last-child) {
+				border-right: 1px solid $white;
+			}
+
+			.navLink {
+				display: block;
+				padding: 1rem 0;
+				font-weight: 600;
+				text-align: center;
+				transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+				&:hover {
+					background-color: $white;
+					color: $gray-dark;
+				}
+			}
+		}
+	}
+}

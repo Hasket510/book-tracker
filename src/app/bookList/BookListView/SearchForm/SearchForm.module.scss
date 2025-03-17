@@ -1,0 +1,17 @@
+@use '@styles/variables' as *;
+
+.searchContainer {
+	display: flex;
+	gap: 1rem;
+
+	.inputSearch {
+		padding: 1rem 1.5rem;
+		border-radius: 0.5rem;
+	}
+
+	.searchButton {
+		padding: 1rem 1rem;
+		border-radius: 0.5rem;
+		background-color: $bg-light;
+	}
+}

@@ -1,0 +1,9 @@
+.favoritesView {
+	padding: 1rem 2rem;
+
+	.favoritesList {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
