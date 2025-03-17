@@ -25,3 +25,7 @@ npm install
 ```
 npm run dev
 ```
+
+## Deploy
+
+https://hasket510.github.io/book-tracker/
