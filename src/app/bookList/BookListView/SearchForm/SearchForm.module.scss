@@ -12,6 +12,11 @@
 	.searchButton {
 		padding: 1rem 1rem;
 		border-radius: 0.5rem;
-		background-color: $bg-light;
+		background-color: var(--search-button-color);
+		color: var(--search-color);
+
+		&:disabled {
+			color: $gray-dark;
+		}
 	}
 }

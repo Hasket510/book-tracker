@@ -1,8 +1,9 @@
 import { Header } from '@/components/Header/Header'
 import '@styles/globals.scss'
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import localFont from 'next/font/local'
-import { TanStackQueryProvider } from './TanStackQueryProvider'
+import { TanStackQueryProvider } from './providers/TanStackQueryProvider'
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -26,12 +27,14 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
+		<html lang='en' suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<TanStackQueryProvider>
-					<Header />
-					{children}
-				</TanStackQueryProvider>
+				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+					<TanStackQueryProvider>
+						<Header />
+						{children}
+					</TanStackQueryProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	)

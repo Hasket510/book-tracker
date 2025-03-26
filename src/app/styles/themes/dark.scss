@@ -1,0 +1,10 @@
+@use '@styles/variables.scss' as *;
+
+.dark {
+	--background: #{$bg-dark};
+	--foreground: #{$fg-dark};
+	--border-color: #{$fg-dark};
+	--author-color: #{$gray};
+	--search-button-color: #{$bg-light};
+	--search-color: #{$fg-light};
+}
