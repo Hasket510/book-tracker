@@ -19,7 +19,7 @@ export function BookCard({
 	}
 
 	return (
-		<li key={id} className={styles.card}>
+		<li className={styles.card}>
 			<Image
 				className={styles.cardImage}
 				src={imageLinks?.thumbnail || notUrl}
@@ -28,14 +28,12 @@ export function BookCard({
 				height={200}
 			/>
 			<div className={styles.cardInfo}>
-				<h3 className={styles.cardTitle}>
-					{title ? title : 'No title information'}
-				</h3>
+				<h3 className={styles.cardTitle}>{title || 'No title information'}</h3>
 				<span className={styles.cardAuthors}>
-					Author(s): {authors ? authors.join(', ') : 'No authors information'}
+					Author(s): {authors?.join(', ') || 'No authors information'}
 				</span>
 				<p className={styles.cardDescription}>
-					{description ? description : 'No description'}
+					{description || 'No description'}
 				</p>
 				<button
 					className={`${styles.cardButton} ${isFavorite && styles.added}`}

@@ -16,6 +16,7 @@ export function ThemeToggle() {
 	return (
 		<button
 			className={styles.themeToggle}
+			aria-label='Toggle theme'
 			onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 		>
 			{theme === 'dark' ? '🌞' : '🌙'}
