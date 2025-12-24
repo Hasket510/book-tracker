@@ -1,4 +1,4 @@
-import { Metadata } from 'next/types'
+import { Metadata } from 'next'
 import { FavoritesView } from './FavoritesView/FavoritesView'
 
 export const metadata: Metadata = {

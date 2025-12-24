@@ -8,6 +8,8 @@ interface IBooksResponse {
 	totalItems: number
 }
 
+const BOOKS_PAGE_SIZE = 10
+
 const fetchBooks = async (
 	search: string,
 	startIndex: number
@@ -15,7 +17,7 @@ const fetchBooks = async (
 	const response = await fetch(
 		`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
 			search
-		)}&startIndex=${startIndex}&maxResults=10&orderBy=newest`,
+		)}&startIndex=${startIndex}&maxResults=${BOOKS_PAGE_SIZE}&orderBy=newest`,
 		{
 			headers: {
 				'Content-Type': 'application/json',
@@ -44,7 +46,7 @@ export function useList(search: string) {
 		queryKey: ['books', search],
 		queryFn: ({ pageParam = 0 }) => fetchBooks(search, pageParam),
 		initialPageParam: 0,
-		getNextPageParam: (lastPage, allPages) => {
+		getNextPageParam: (lastPage: IBooksResponse, allPages) => {
 			const totalLoaded = allPages.flatMap(page => page.items).length
 			return totalLoaded < lastPage.totalItems ? totalLoaded : undefined
 		},

@@ -1,6 +1,5 @@
 import { IBookProps } from '@/app/bookList/BookList.types'
 import { useRemoveBook } from '@/store/store'
-import notUrl from '@public/images/notFound.png'
 import Image from 'next/image'
 import styles from './FavoritesCard.module.scss'
 export function FavoritesCard({
@@ -13,7 +12,7 @@ export function FavoritesCard({
 		<li className={styles.card}>
 			<Image
 				className={styles.cardImage}
-				src={imageLinks?.thumbnail || notUrl}
+				src={imageLinks?.thumbnail || '/images/notFound.png'}
 				alt={title || 'book'}
 				width={100}
 				height={200}
