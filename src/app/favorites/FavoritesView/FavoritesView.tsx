@@ -1,6 +1,6 @@
 'use client'
+import { FavoritesCard } from '@/components/FavoritesCard'
 import { useBooks } from '@/store/store'
-import { FavoritesCard } from './FavoritesCard/FavoritesCard'
 import styles from './FavoritesView.module.scss'
 
 export function FavoritesView() {

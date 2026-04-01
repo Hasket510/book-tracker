@@ -1,6 +1,6 @@
 import { NAV_ITEMS } from '@/constants/navigation'
 import Link from 'next/link'
-import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
+import { ThemeToggle } from '@/components/ThemeToggle'
 import styles from './Header.module.scss'
 
 export function Header() {

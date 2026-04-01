@@ -1,5 +1,6 @@
 import styles from './SearchForm.module.scss'
-import { ISearchFormProps } from './SearchForm.types'
+import type { ISearchFormProps } from './SearchForm.types'
+
 export function SearchForm({
 	inputText,
 	isLoading,
@@ -17,6 +18,7 @@ export function SearchForm({
 				onKeyDown={e => e.key === 'Enter' && onSearch()}
 			/>
 			<button
+				type='button'
 				className={styles.searchButton}
 				onClick={onSearch}
 				disabled={!inputText || isLoading}

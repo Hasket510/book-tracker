@@ -1,12 +1,9 @@
-import { IBookProps } from '@/app/bookList/BookList.types'
-import { useRemoveBook } from '@/store/store'
 import Image from 'next/image'
-import styles from './FavoritesCard.module.scss'
-export function FavoritesCard({
-	id,
-	volumeInfo: { title, authors, imageLinks, description },
-}: IBookProps) {
-	const removeBook = useRemoveBook()
+import styles from './BookCardBase.module.scss'
+import { IBookCardBaseProps } from './BookCardBase.types'
+
+export function BookCardBase({ book, action }: IBookCardBaseProps) {
+	const { title, authors, imageLinks, description } = book.volumeInfo
 
 	return (
 		<li className={styles.card}>
@@ -25,9 +22,7 @@ export function FavoritesCard({
 				<p className={styles.cardDescription}>
 					{description || 'No description'}
 				</p>
-				<button className={styles.cardButton} onClick={() => removeBook(id)}>
-					Remove from favorites
-				</button>
+				{action}
 			</div>
 		</li>
 	)

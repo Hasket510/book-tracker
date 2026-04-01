@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { BookListView } from './BookListView/BookListView'
+import { BookListView } from './BookListView'
 
 export const metadata: Metadata = {
 	title: 'Book-list',

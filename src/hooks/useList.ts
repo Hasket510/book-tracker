@@ -1,5 +1,5 @@
 'use client'
-import { IBookProps, IBooksApiResponse } from '@/app/bookList/BookList.types'
+import { IBookProps, IBooksApiResponse } from '@/types/books'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { useMemo } from 'react'
 

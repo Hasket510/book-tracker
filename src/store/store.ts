@@ -1,6 +1,6 @@
 'use client'
 
-import { IBookProps } from '@/app/bookList/BookList.types'
+import { IBookProps } from '@/types/books'
 import { useMemo } from 'react'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'

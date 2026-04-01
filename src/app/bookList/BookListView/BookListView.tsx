@@ -1,9 +1,9 @@
 'use client'
+import { BookCard } from '@/components/BookCard'
+import { SearchForm } from '@/components/SearchForm'
 import { useList } from '@/hooks/useList'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { BookCard } from './BookCard/BookCard'
 import styles from './BookListView.module.scss'
-import { SearchForm } from './SearchForm/SearchForm'
 
 export function BookListView() {
 	const [inputText, setInputText] = useState('')

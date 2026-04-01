@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { FavoritesView } from './FavoritesView/FavoritesView'
+import { FavoritesView } from './FavoritesView'
 
 export const metadata: Metadata = {
 	title: 'Favorites',

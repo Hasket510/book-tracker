@@ -1,4 +1,4 @@
-import { Header } from '@/components/Header/Header'
+import { Header } from '@/components/Header'
 import '@styles/globals.scss'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
