@@ -1,9 +1,13 @@
+'use client'
+
 import { IBookProps } from '@/app/bookList/BookList.types'
+import { useMemo } from 'react'
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
 interface IBookStore {
-	books: IBookProps[]
+	booksById: Record<string, IBookProps>
+	favoriteBookIds: string[]
 	addBook: (book: IBookProps) => void
 	removeBook: (id: string) => void
 }
@@ -11,17 +15,52 @@ interface IBookStore {
 export const useBookStore = create<IBookStore>()(
 	persist(
 		set => ({
-			books: [],
-			addBook: book => set(state => ({ books: [...state.books, book] })),
+			booksById: {},
+			favoriteBookIds: [],
+			addBook: book =>
+				set(state => {
+					if (!book.id || state.booksById[book.id]) return state
+					return {
+						booksById: { ...state.booksById, [book.id]: book },
+						favoriteBookIds: [...state.favoriteBookIds, book.id],
+					}
+				}),
 			removeBook: id =>
-				set(state => ({ books: state.books.filter(b => b.id !== id) })),
+				set(state => {
+					if (!state.booksById[id]) return state
+					const booksById = { ...state.booksById }
+					delete booksById[id]
+					return {
+						booksById,
+						favoriteBookIds: state.favoriteBookIds.filter(i => i !== id),
+					}
+				}),
 		}),
-		{ name: 'book-store' }
-	)
+		{
+			name: 'book-store',
+			storage: createJSONStorage(() => localStorage),
+			partialize: state => ({
+				booksById: state.booksById,
+				favoriteBookIds: state.favoriteBookIds,
+			}),
+		},
+	),
 )
 
-export const useBooks = () => useBookStore(state => state.books)
+export const useBooks = () => {
+	const favoriteBookIds = useBookStore(state => state.favoriteBookIds)
+	const booksById = useBookStore(state => state.booksById)
+	return useMemo(
+		() =>
+			favoriteBookIds
+				.map(id => booksById[id])
+				.filter((b): b is IBookProps => b !== undefined),
+		[favoriteBookIds, booksById],
+	)
+}
+
 export const useFavorite = (id: string) =>
-	useBookStore(state => state.books.some(book => book.id === id))
+	useBookStore(state => Boolean(state.booksById[id]))
+
 export const useAddBook = () => useBookStore(state => state.addBook)
 export const useRemoveBook = () => useBookStore(state => state.removeBook)
