@@ -21,7 +21,7 @@ export function SearchForm({
 				type='button'
 				className={styles.searchButton}
 				onClick={onSearch}
-				disabled={!inputText || isLoading}
+				disabled={!inputText.trim() || isLoading}
 			>
 				Search
 			</button>

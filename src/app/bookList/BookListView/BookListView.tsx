@@ -19,6 +19,7 @@ export function BookListView() {
 	const observerRef = useRef<HTMLDivElement>(null)
 
 	const handleSearch = useCallback(() => {
+		if (!inputText.trim()) return
 		setSearchBook(inputText)
 	}, [inputText])
 

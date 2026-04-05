@@ -17,6 +17,9 @@
 
 		&:disabled {
 			color: $gray-dark;
+			cursor: not-allowed;
+			opacity: 0.5;
+			transition: opacity 0.2s ease-in-out;
 		}
 	}
 }
