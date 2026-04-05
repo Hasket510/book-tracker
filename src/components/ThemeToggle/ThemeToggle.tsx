@@ -6,7 +6,7 @@ import styles from './ThemeToggle.module.scss'
 
 export function ThemeToggle() {
 	const [mounted, setMounted] = useState(false)
-	const { theme, setTheme } = useTheme()
+	const { resolvedTheme, setTheme } = useTheme()
 	useEffect(() => {
 		setMounted(true)
 	}, [])
@@ -17,9 +17,10 @@ export function ThemeToggle() {
 		<button
 			className={styles.themeToggle}
 			aria-label='Toggle theme'
-			onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+			onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+			type='button'
 		>
-			{theme === 'dark' ? '🌞' : '🌙'}
+			{resolvedTheme === 'dark' ? '🌞' : '🌙'}
 		</button>
 	)
 }
