@@ -1,7 +1,6 @@
-@use '@styles/variables' as *;
-
 .card {
 	display: flex;
+	min-width: 0;
 	padding: 0.5rem;
 	gap: 0.5rem;
 	border: 1px solid transparent;
@@ -17,6 +16,8 @@
 	}
 
 	.cardInfo {
+		flex: 1;
+		min-width: 0;
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
@@ -30,15 +31,28 @@
 		}
 
 		.cardButton {
+			align-self: flex-start;
 			margin-top: auto;
+			width: min(16.5rem, 100%);
 			padding: 0.5rem 1rem;
-			max-width: 200px;
-			background-color: $green;
 			border-radius: 0.5rem;
-			transition: background-color 0.2s ease-in-out;
+			font: inherit;
+			font-weight: 600;
+			white-space: nowrap;
+			color: var(--btn-add-fg);
+			background-color: var(--btn-add-bg);
+			transition:
+				background-color 0.2s ease-in-out,
+				color 0.2s ease-in-out,
+				filter 0.2s ease-in-out;
+
+			&:hover {
+				filter: brightness(1.06);
+			}
 
 			&.added {
-				background-color: $red;
+				color: var(--btn-remove-fg);
+				background-color: var(--btn-remove-bg);
 			}
 		}
 	}

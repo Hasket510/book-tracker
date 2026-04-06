@@ -4,7 +4,11 @@
 	--background: #{$bg-light};
 	--foreground: #{$fg-light};
 	--border-color: #{$gray-dark};
-	--author-color: #{$gray-dark};
+	--author-color: #{$author-light};
 	--search-button-color: #{$bg-dark};
 	--search-color: #{$fg-dark};
+	--btn-add-bg: #{$btn-add-bg-light};
+	--btn-add-fg: #{$btn-add-fg-light};
+	--btn-remove-bg: #{$btn-remove-bg-light};
+	--btn-remove-fg: #{$btn-remove-fg-light};
 }

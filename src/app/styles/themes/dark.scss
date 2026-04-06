@@ -3,8 +3,12 @@
 .dark {
 	--background: #{$bg-dark};
 	--foreground: #{$fg-dark};
-	--border-color: #{$fg-dark};
+	--border-color: #{$border-dark};
 	--author-color: #{$gray};
 	--search-button-color: #{$bg-light};
 	--search-color: #{$fg-light};
+	--btn-add-bg: #{$btn-add-bg-dark};
+	--btn-add-fg: #{$btn-add-fg-dark};
+	--btn-remove-bg: #{$btn-remove-bg-dark};
+	--btn-remove-fg: #{$btn-remove-fg-dark};
 }
