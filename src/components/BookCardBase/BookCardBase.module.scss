@@ -42,9 +42,9 @@
 			color: var(--btn-add-fg);
 			background-color: var(--btn-add-bg);
 			transition:
-				background-color 0.2s ease-in-out,
-				color 0.2s ease-in-out,
-				filter 0.2s ease-in-out;
+				background-color 0.3s ease-in-out,
+				color 0.3s ease-in-out,
+				filter 0.3s ease-in-out;
 
 			&:hover {
 				filter: brightness(1.06);
