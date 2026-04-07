@@ -12,6 +12,7 @@ export function SearchForm({
 			<input
 				className={styles.inputSearch}
 				type='text'
+				aria-label='Поиск книг'
 				value={inputText}
 				placeholder='Название книги или автор'
 				onChange={e => setInputText(e.target.value)}

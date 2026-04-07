@@ -1,5 +1,5 @@
 export interface IBooksApiResponse {
-	items?: IBookProps[]
+	items?: unknown[]
 	totalItems?: number
 }
 

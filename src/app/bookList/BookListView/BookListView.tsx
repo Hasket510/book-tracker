@@ -21,7 +21,7 @@ export function BookListView() {
 
 	const handleSearch = useCallback(() => {
 		if (!inputText.trim()) return
-		setSearchBook(inputText)
+		setSearchBook(inputText.trim())
 	}, [inputText])
 
 	useEffect(() => {

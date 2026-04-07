@@ -42,6 +42,7 @@ function normalizeBooksPage(data: IBooksApiResponse): IBooksPage {
 const fetchBooks = async (
 	search: string,
 	startIndex: number,
+	signal?: AbortSignal,
 ): Promise<IBooksPage> => {
 	const response = await fetch(
 		`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
@@ -51,6 +52,7 @@ const fetchBooks = async (
 			headers: {
 				'Content-Type': 'application/json',
 			},
+			signal,
 		},
 	)
 
@@ -92,7 +94,7 @@ export function useList(search: string) {
 		fetchNextPage,
 	} = useInfiniteQuery({
 		queryKey: ['books', search],
-		queryFn: ({ pageParam = 0 }) => fetchBooks(search, pageParam),
+		queryFn: ({ pageParam = 0, signal }) => fetchBooks(search, pageParam, signal),
 		initialPageParam: 0,
 		getNextPageParam: getNextPageParam,
 	})
