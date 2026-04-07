@@ -2,10 +2,16 @@ import styles from './page.module.scss'
 
 export default function Home() {
 	return (
-		<div className={styles.page}>
-			<main className={styles.main}>
-				<h2>Welcome to our book-tracker</h2>
-			</main>
-		</div>
+		<main className={styles.main}>
+			<section className={styles.section}>
+				<h1 className={styles.title}>Welcome to book-tracker</h1>
+				<p className={styles.description}>
+					Book-tracker is a simple app that allows you to track your books.
+				</p>
+				<p className={styles.description}>
+					Search books and save them to your favorite list.
+				</p>
+			</section>
+		</main>
 	)
 }
