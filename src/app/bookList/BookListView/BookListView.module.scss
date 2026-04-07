@@ -9,4 +9,14 @@
 		flex-direction: column;
 		gap: 2rem;
 	}
+
+	.loader {
+		padding: 1rem 0 2rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	.observerTrigger {
+		height: 3rem;
+	}
 }

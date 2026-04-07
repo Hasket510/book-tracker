@@ -1,0 +1,21 @@
+.spinnerContainer {
+	display: inline-block;
+}
+
+.spinner {
+	display: block;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 3px;
+	border-color: var(--border-color);
+	border-top-color: var(--foreground);
+	animation: loaderSpin 0.75s linear infinite;
+}
+
+@keyframes loaderSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}

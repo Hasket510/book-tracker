@@ -1,5 +1,6 @@
 'use client'
 import { BookCard } from '@/components/BookCard'
+import { Loader } from '@/components/Loader'
 import { SearchForm } from '@/components/SearchForm'
 import { useList } from '@/hooks/useList'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -7,7 +8,7 @@ import styles from './BookListView.module.scss'
 
 export function BookListView() {
 	const [inputText, setInputText] = useState('')
-	const [searchBook, setSearchBook] = useState('random books')
+	const [searchBook, setSearchBook] = useState('случайные книги')
 	const {
 		data,
 		isLoading,
@@ -57,9 +58,15 @@ export function BookListView() {
 				))}
 			</ul>
 
-			{hasNextPage && <div ref={observerRef}></div>}
+			{(isLoading || isFetchingNextPage) && (
+				<div className={styles.loader}>
+					<Loader />
+				</div>
+			)}
 
-			{(isLoading || isFetchingNextPage) && <p>Загрузка…</p>}
+			{hasNextPage && (
+				<div className={styles.observerTrigger} ref={observerRef} />
+			)}
 
 			{isError && <p>Не удалось загрузить книги</p>}
 		</section>
