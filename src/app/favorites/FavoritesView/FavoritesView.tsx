@@ -10,6 +10,7 @@ export function FavoritesView() {
 	if (books.length === 0) {
 		return (
 			<section className={styles.favoritesView}>
+				<h1 className={styles.title}>Избранное</h1>
 				<div className={styles.emptyState} role='status'>
 					<p className={styles.emptyTitle}>Пока нет избранного</p>
 					<p className={styles.emptyHint}>
@@ -25,6 +26,7 @@ export function FavoritesView() {
 
 	return (
 		<section className={styles.favoritesView}>
+			<h1 className={styles.title}>Избранное</h1>
 			<ul className={styles.favoritesList}>
 				{books.map(book => (
 					<FavoritesCard key={book.id} {...book} />

@@ -4,6 +4,12 @@
 	flex-direction: column;
 	gap: 2rem;
 
+	.title {
+		font-size: 2rem;
+		font-weight: 600;
+		text-align: center;
+	}
+
 	.bookList {
 		display: flex;
 		flex-direction: column;

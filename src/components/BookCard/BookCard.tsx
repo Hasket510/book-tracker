@@ -21,6 +21,7 @@ export function BookCard(book: IBookProps) {
 					type='button'
 					className={`${styles.cardButton} ${isFavorite ? styles.added : ''}`}
 					onClick={handleChange}
+					aria-pressed={isFavorite}
 				>
 					{isFavorite ? 'Убрать из избранного −' : 'В избранное +'}
 				</button>

@@ -32,7 +32,7 @@ export default function RootLayout({
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 					<TanStackQueryProvider>
 						<Header />
-						{children}
+						<main>{children}</main>
 					</TanStackQueryProvider>
 				</ThemeProvider>
 			</body>

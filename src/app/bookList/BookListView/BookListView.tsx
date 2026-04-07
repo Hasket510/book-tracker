@@ -45,6 +45,7 @@ export function BookListView() {
 
 	return (
 		<section className={styles.bookListView}>
+			<h1 className={styles.title}>Каталог</h1>
 			<SearchForm
 				inputText={inputText}
 				isLoading={isLoading}
@@ -68,7 +69,7 @@ export function BookListView() {
 				<div className={styles.observerTrigger} ref={observerRef} />
 			)}
 
-			{isError && <p>Не удалось загрузить книги</p>}
+			{isError && <p role='alert'>Не удалось загрузить книги</p>}
 		</section>
 	)
 }
