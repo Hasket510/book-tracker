@@ -55,7 +55,7 @@ const fetchBooks = async (
 	)
 
 	if (!response.ok) {
-		let message = 'Failed to fetch books'
+		let message = 'Не удалось загрузить книги'
 		try {
 			const errorData = await response.json()
 			message = errorData?.error?.message ?? message

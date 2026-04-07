@@ -15,7 +15,7 @@ export function FavoritesCard(book: IBookProps) {
 					className={`${styles.cardButton} ${styles.added}`}
 					onClick={() => removeBook(book.id)}
 				>
-					Remove from favorites -
+					Убрать из избранного −
 				</button>
 			}
 		/>

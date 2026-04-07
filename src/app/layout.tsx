@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
 	title: 'Book-tracker',
-	description: 'Book-tracker',
+	description: 'Поиск книг и избранное',
 }
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en' suppressHydrationWarning>
+		<html lang='ru' suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
 					<TanStackQueryProvider>

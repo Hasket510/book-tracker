@@ -4,12 +4,13 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<section className={styles.section}>
-				<h1 className={styles.title}>Welcome to book-tracker</h1>
+				<h1 className={styles.title}>Добро пожаловать в Book-tracker</h1>
 				<p className={styles.description}>
-					Book-tracker is a simple app that allows you to track your books.
+					Book-tracker это простое приложение, чтобы находить книги и вести свой
+					список избранных.
 				</p>
 				<p className={styles.description}>
-					Search books and save them to your favorite list.
+					Ищите в каталоге и сохраняйте понравившиеся в избранное.
 				</p>
 			</section>
 		</main>

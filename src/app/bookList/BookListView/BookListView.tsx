@@ -59,9 +59,9 @@ export function BookListView() {
 
 			{hasNextPage && <div ref={observerRef}></div>}
 
-			{(isLoading || isFetchingNextPage) && <p>Loading...</p>}
+			{(isLoading || isFetchingNextPage) && <p>Загрузка…</p>}
 
-			{isError && <p>Error fetching books</p>}
+			{isError && <p>Не удалось загрузить книги</p>}
 		</section>
 	)
 }

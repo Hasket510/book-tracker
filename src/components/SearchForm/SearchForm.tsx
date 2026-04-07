@@ -13,7 +13,7 @@ export function SearchForm({
 				className={styles.inputSearch}
 				type='text'
 				value={inputText}
-				placeholder='Search book'
+				placeholder='Название книги или автор'
 				onChange={e => setInputText(e.target.value)}
 				onKeyDown={e => e.key === 'Enter' && onSearch()}
 			/>
@@ -23,7 +23,7 @@ export function SearchForm({
 				onClick={onSearch}
 				disabled={!inputText.trim() || isLoading}
 			>
-				Search
+				Найти
 			</button>
 		</div>
 	)

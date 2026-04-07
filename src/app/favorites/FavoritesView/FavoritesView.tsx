@@ -11,12 +11,12 @@ export function FavoritesView() {
 		return (
 			<section className={styles.favoritesView}>
 				<div className={styles.emptyState} role='status'>
-					<p className={styles.emptyTitle}>No favorites yet</p>
+					<p className={styles.emptyTitle}>Пока нет избранного</p>
 					<p className={styles.emptyHint}>
-						Add books from the catalog to see them here.
+						Добавьте книги из каталога — они появятся здесь.
 					</p>
 					<Link className={styles.emptyLink} href='/bookList'>
-						Browse book list
+						Перейти в каталог
 					</Link>
 				</div>
 			</section>

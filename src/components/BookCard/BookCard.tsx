@@ -22,7 +22,7 @@ export function BookCard(book: IBookProps) {
 					className={`${styles.cardButton} ${isFavorite ? styles.added : ''}`}
 					onClick={handleChange}
 				>
-					{isFavorite ? 'Remove from favorites -' : 'Add to favorites +'}
+					{isFavorite ? 'Убрать из избранного −' : 'В избранное +'}
 				</button>
 			}
 		/>

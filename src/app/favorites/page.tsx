@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import { FavoritesView } from './FavoritesView'
 
 export const metadata: Metadata = {
-	title: 'Favorites',
-	description: 'Book-list favorites',
+	title: 'Избранное',
+	description: 'Сохранённые книги',
 }
 
 export default function Page() {

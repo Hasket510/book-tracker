@@ -1,10 +1,10 @@
 export const NAV_ITEMS = [
 	{
 		path: '/bookList',
-		label: 'Book List',
+		label: 'Каталог',
 	},
 	{
 		path: '/favorites',
-		label: 'Favorites',
+		label: 'Избранное',
 	},
 ]
